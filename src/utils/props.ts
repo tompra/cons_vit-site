@@ -6,3 +6,12 @@ export interface ServiceCardProps {
     title: string;
     description: string;
 }
+export interface ButtonProps {
+    text: string;
+}
+
+export interface ModalContextProps {
+    showModal: boolean;
+    openModal: () => void;
+    closeModal: () => void;
+}
