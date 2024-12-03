@@ -43,3 +43,13 @@
     background-color: blue;
     color: whitesmoke;
 }
+
+@media (max-width: 576px) {
+    .modal-dialog {
+        max-width: 100%;
+        margin: 0;
+    }
+    .modal-body {
+        padding: 0;
+    }
+}
