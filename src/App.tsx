@@ -5,20 +5,25 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import { ModalProvider } from './context/context';
+import Modal from './components/ModalCall';
 
 const App = () => {
     return (
-        <Router>
-            <MainLayout>
-                <Routes>
-                    <Route path='/home' element={<Home />} />
-                    <Route path='/about' element={<About />} />
-                    <Route path='/services' element={<Services />} />
-                    <Route path='/contact' element={<Contact />} />
-                    <Route path='*' element={<NotFound />} />
-                </Routes>
-            </MainLayout>
-        </Router>
+        <ModalProvider>
+            <Router>
+                <MainLayout>
+                    <Routes>
+                        <Route path='/home' element={<Home />} />
+                        <Route path='/about' element={<About />} />
+                        <Route path='/services' element={<Services />} />
+                        <Route path='/contact' element={<Contact />} />
+                        <Route path='*' element={<NotFound />} />
+                    </Routes>
+                </MainLayout>
+                <Modal />
+            </Router>
+        </ModalProvider>
     );
 };
 export default App;
